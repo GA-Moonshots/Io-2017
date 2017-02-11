@@ -71,6 +71,7 @@ public class Robot extends IterativeRobot {
 		driveSpeed = joystick.getPitch().scale(sensitivity::read); // scaled
 		turnSpeed = joystick.getRoll().scale(sensitivity::read); // scaled and
 																	// inverted
+		reactor.onTriggered(joystick.getButton (2), ()-> turnSpeed.read(-.5));
 	}
 
 	@Override
